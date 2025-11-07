@@ -1,0 +1,62 @@
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Arquivos .gexf (grafos grandes)
+*.gexf
+*.csv
+
+# Resultados das análises
+resultados_*/
+resultados/
+*.json
+
+# Visualizações geradas
+*.png
+
+# Arquivos temporários Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# LaTeX temporários
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+!relatorio-final/*.pdf
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.idea/
+*.sublime-*
+.vscode/
+
+# Testes
+teste_*.png
+teste_*.json
+

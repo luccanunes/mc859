@@ -1,0 +1,94 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- PACOTES ESSENCIAIS ---
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{url}
+
+% --- CONFIGURAÇÃO DAS MARGENS ---
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+
+% --- INFORMAÇÕES DO DOCUMENTO ---
+\title{MC859 - Análise de Redes de Similaridade de Jogos da Plataforma Steam}
+\author{Yvens Ian Prado Porto\hspace{20pt}e\hspace{20pt}Lucca Miranda Nunes\\
+RA 184031\hspace{20pt}e\hspace{20pt}RA 230554}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introdução e Metodologia}
+
+Este relatório apresenta uma análise inicial de redes construídas a partir de dados da plataforma de jogos Steam. 
+
+A seleção inicial de um conjunto de aproximadamente 27.000 jogos foi realizada a partir de um dataset público da loja Steam. Para cada jogo neste conjunto, foram coletadas as avaliações de usuários através da API pública da Steam. A partir destes dados, três grafos não-direcionados e ponderados, $G=(V, E)$, foram construídos, onde o conjunto de vértices $V$ representa os jogos e as arestas $E$ representam diferentes métricas de relação entre eles.
+
+\subsection*{Definição dos Grafos}
+Seja $V = \{j_1, j_2, \dots, j_n\}$ o conjunto de jogos (vértices). Para qualquer jogo $j_i \in V$, definimos $U_i$ como o conjunto de usuários únicos que avaliaram o jogo $j_i$.
+
+\paragraph{1. Grafo de Similaridade de Público (Jaccard)}
+Este grafo tem como objetivo quantificar a sobreposição relativa do público entre pares de jogos.
+\begin{itemize}
+    \item \textbf{Vértices:} Cada vértice $j_i \in V$ é um jogo.
+    \item \textbf{Arestas:} Uma aresta $(j_i, j_j)$ existe se, e somente se, o conjunto de avaliadores em comum não for vazio, ou seja, $U_i \cap U_j \neq \emptyset$.
+    \item \textbf{Peso da Aresta ($w_{ij}$):} O peso da aresta é definido pelo \textbf{Índice de Jaccard} entre os dois conjuntos de avaliadores:
+    \[
+        w_{ij} = \frac{|U_i \cap U_j|}{|U_i \cup U_j|}
+    \]
+    \item \textbf{Interpretação:} O peso, um valor no intervalo $[0, 1]$, indica a força da similaridade de público. Um peso próximo de 1 significa que os jogos são avaliados quase pelo mesmo grupo de jogadores.
+\end{itemize}
+
+\paragraph{2. Grafo de Qualidade da Discussão (Weighted Score)}
+Este grafo busca mapear as conexões de ``discurso crítico'' dentro da comunidade Steam, identificando jogos que atraem um público similarmente engajado e articulado. Para isso, o peso da aresta ($w_{ij}$) é a média do campo \texttt{weighted\_vote\_score} para todos os usuários na interseção de públicos. Este valor, fornecido pela API da Steam, é uma medida de 0 a 1 que reflete a utilidade de uma avaliação conforme votado pela comunidade, sendo mais robusto que uma simples contagem de votos positivos ao recompensar análises detalhadas e bem fundamentadas. Dessa forma, uma aresta de peso elevado não indica apenas um público compartilhado, mas sim um público que se engaja de forma crítica e aprofundada com ambos os jogos.
+
+\paragraph{3. Grafo de Alinhamento de Sentimento}
+Este grafo quantifica o alinhamento de opinião do público compartilhado, revelando se os jogos provocam reações similares ou opostas no mesmo grupo de pessoas. O sentimento de cada avaliação é codificado como $+1$ para uma avaliação positiva (\textit{voted up}) e $-1$ para uma negativa. O peso da aresta ($w_{ij}$) é a soma dos sentimentos entre os usuários em comum. Dessa forma, um peso fortemente positivo indica um forte alinhamento de gosto, conectando jogos que são consistentemente amados (ou odiados) pelo mesmo público. Em contrapartida, um peso fortemente negativo revela uma polarização, conectando jogos ``divisores de águas'' onde os fãs de um tendem a não gostar do outro, enquanto um peso próximo de zero sugere que as opiniões sobre os jogos não possuem correlação.
+
+\subsection*{Disponibilidade dos Dados}
+Os grafos gerados neste estudo estão publicamente disponíveis no formato GEXF no repositório Zenodo e podem ser acessados através do
+\href{https://zenodo.org/records/17221173?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImFkNGI0YzE1LTk5NzEtNGQ3NC05ZWJlLTI4MTYxOGZhMDc3OSIsImRhdGEiOnt9LCJyYW5kb20iOiJlYzJlOWE4MzdmOWRmNjBiYWJiYWQyNmE5MDgxMjE0MiJ9.-Jz85hvCBYK5O24Lq5P2A76hSyGHPEsomANQCEzXdTM8DvSoW2NWCy7SPJHKi012baVbY9jAhSNiwl3Je1lgDA}{link/DOI}. Os grafos também foram submetidos para o Mendeley Data, mas estão sob análise.
+
+\section{Caracterização do Grafo}
+
+A análise a seguir foca no \textbf{Grafo de Similaridade Jaccard}, construído a partir de uma lista inicial de 27.075 jogos. A rede resultante possui as seguintes características topológicas:
+
+\begin{itemize}
+    \item \textbf{Número de Vértices (Jogos):} 27.046
+    \item \textbf{Número de Arestas (Relações):} 6.746.010
+    \item \textbf{Grau Médio dos Vértices:} 498.85
+\end{itemize}
+
+\section{Distribuição de Graus}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{distribuicao-graus-aprimorada.png}
+    \caption{Distribuição de graus em escala log-log.}
+    \label{fig:dist_graus}
+\end{figure}
+
+Observa-se na Figura \ref{fig:dist_graus} uma distribuição de cauda longa (\textit{heavy-tail}), confirmando que a maioria dos jogos (a ``cauda'') possui um número pequeno de conexões, enquanto um número reduzido de jogos atua como ``hubs'' altamente conectados, possuindo um grau muito elevado e conectando diferentes partes da rede.
+
+\section{Análise de Conectividade}
+
+A análise de conectividade revelou que o grafo não é totalmente conectado, sendo composto por múltiplos subgrupos de jogos isolados entre si. O número de Componentes Conectadas é de 4.270.
+
+\section{Distribuição dos Tamanhos das Componentes}
+
+Embora o grafo seja altamente fragmentado, ele é dominado por uma \textbf{``Componente Gigante''} que engloba a vasta maioria dos nós. As demais 4.269 componentes são significativamente menores, como detalhado na Figura \ref{fig:dist_comp}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{distribuicao-componentes-aprimorada.png}
+    \caption{Distribuição do número de componentes por tamanho em escala log-log.}
+    \label{fig:dist_comp}
+\end{figure}
+
+O grafo possui uma componente massiva com \textbf{22.633 vértices}, o que corresponde a aproximadamente 83.7\% de todos os nós da rede. A segunda maior componente contém apenas 5 vértices. O gráfico confirma que a esmagadora maioria das outras componentes é minúscula, consistindo tipicamente em pares ou trios de jogos de nicho que não se conectam à rede principal.
+
+\end{document}
+% --- FIM DO DOCUMENTO ---
