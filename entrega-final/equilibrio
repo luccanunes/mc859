@@ -1,0 +1,32 @@
+Contagem de triângulos concluída em 76.23 segundos.
+
+--- Resultado (Equilíbrio Fraco) ---
+Thresholds usados: Pos > 1.5, Neg < -1.5
+Total de Triângulos encontrados: 46992105
+   Balanceados (+++): 44821866
+   Balanceados (+--): 1333767
+   Balanceados (---): 1712 (só frustrado no sentido 'forte')
+   FRUSTRADOS (++-): 834760
+
+========================================================
+ Proporção de Frustração (Fraca) [++- / Total]: 0.017764
+========================================================
+Interpretação: Rede altamente equilibrada!
+
+
+
+
+Contagem de triângulos concluída em 2076.13 segundos.
+
+--- Resultado (Equilíbrio Fraco) ---
+Thresholds usados: Pos > 0.5, Neg < -0.5
+Total de Triângulos encontrados: 1620723552
+   Balanceados (+++): 1334738585
+   Balanceados (+--): 175669669
+   Balanceados (---): 2007618 (só frustrado no sentido 'forte')
+   FRUSTRADOS (++-): 108307680
+
+========================================================
+ Proporção de Frustração (Fraca) [++- / Total]: 0.066827
+========================================================
+Interpretação: Rede 'quase' equilibrada.

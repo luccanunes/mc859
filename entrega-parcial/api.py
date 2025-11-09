@@ -23,13 +23,13 @@ def get_game_by_id(game_id):
     else:
         return None
 
-def get_game_reviews(game_id, num_pages=2, per_page=100, only_positive=None):
+def get_game_reviews(game_id, num_pages=2, per_page=100):
     cursor = '*'
     reviews = {}
     for _ in range(num_pages):
         url = (
             f"https://store.steampowered.com/appreviews/{game_id}"
-            f"?json=1&num_per_page={per_page}&cursor={cursor}&purchase_type=all"
+            f"?json=1&num_per_page={per_page}&cursor={cursor}&purchase_type=all&language=all"
         )
         resp = requests.get(url)
         if resp.status_code != 200:
@@ -37,13 +37,11 @@ def get_game_reviews(game_id, num_pages=2, per_page=100, only_positive=None):
         data = resp.json()
         for rev in data.get('reviews', []):
             voted_up = rev['voted_up']
-            if only_positive is not None and voted_up != only_positive:
-                continue
             steamid = rev['author']['steamid']
             weighted_vote_score = rev.get('weighted_vote_score', 0)
             reviews[steamid] = (voted_up, weighted_vote_score)
         cursor = data.get('cursor')
         if not data.get('reviews'):
             break
-        time.sleep(1)
+        time.sleep(.5)
     return reviews

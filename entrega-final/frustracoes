@@ -1,0 +1,197 @@
+Carregando metadados de '../entrega-parcial/steam.csv'...
+Metadados carregados. 27075 jogos no mapa.
+Carregando e binarizando grafo de 'grafo_sentimento.txt'...
+(Usando thresholds: Pos > 0.5, Neg < -0.5)
+Grafo binarizado carregado em 6.61s.
+Nós: 22895, Arestas: 6500182
+
+Digite 'SAIR' a qualquer momento para fechar.
+
+Digite o nome (ou parte do nome) do jogo que deseja investigar: POSTAL Redux
+
+--- 🔎 Investigando Triângulos Frustrados para: POSTAL Redux (401680) ---
+
+Triângulo #1 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Day of Defeat
+  Jogo W:         Postal III
+  Lógica da Tensão:
+    (POSTAL Redux, Day of Defeat) -> Sinal 1
+    (POSTAL Redux, Postal III) -> Sinal -1
+    (Day of Defeat, Postal III) -> Sinal 1
+
+Triângulo #2 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Day of Defeat
+  Jogo W:         STAR WARS™ Starfighter™
+  Lógica da Tensão:
+    (POSTAL Redux, Day of Defeat) -> Sinal 1
+    (POSTAL Redux, STAR WARS™ Starfighter™) -> Sinal 1
+    (Day of Defeat, STAR WARS™ Starfighter™) -> Sinal -1
+
+Triângulo #3 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Day of Defeat
+  Jogo W:         Anno 2070™
+  Lógica da Tensão:
+    (POSTAL Redux, Day of Defeat) -> Sinal 1
+    (POSTAL Redux, Anno 2070™) -> Sinal 1
+    (Day of Defeat, Anno 2070™) -> Sinal -1
+
+Triângulo #4 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         Postal III
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, Postal III) -> Sinal -1
+    (Half-Life: Opposing Force, Postal III) -> Sinal 1
+
+Triângulo #5 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         FlatOut: Ultimate Carnage
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, FlatOut: Ultimate Carnage) -> Sinal 1
+    (Half-Life: Opposing Force, FlatOut: Ultimate Carnage) -> Sinal -1
+
+Triângulo #6 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         S.T.A.L.K.E.R.: Clear Sky
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, S.T.A.L.K.E.R.: Clear Sky) -> Sinal 1
+    (Half-Life: Opposing Force, S.T.A.L.K.E.R.: Clear Sky) -> Sinal -1
+
+Triângulo #7 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         Orcs Must Die!
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, Orcs Must Die!) -> Sinal 1
+    (Half-Life: Opposing Force, Orcs Must Die!) -> Sinal -1
+
+Triângulo #8 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         Murdered: Soul Suspect
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, Murdered: Soul Suspect) -> Sinal 1
+    (Half-Life: Opposing Force, Murdered: Soul Suspect) -> Sinal -1
+
+Triângulo #9 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         A Story About My Uncle
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, A Story About My Uncle) -> Sinal 1
+    (Half-Life: Opposing Force, A Story About My Uncle) -> Sinal -1
+
+Triângulo #10 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         Clatter
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, Clatter) -> Sinal 1
+    (Half-Life: Opposing Force, Clatter) -> Sinal -1
+
+Triângulo #11 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         Tannenberg
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, Tannenberg) -> Sinal 1
+    (Half-Life: Opposing Force, Tannenberg) -> Sinal -1
+
+Triângulo #12 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Half-Life: Opposing Force
+  Jogo W:         SIMULACRA
+  Lógica da Tensão:
+    (POSTAL Redux, Half-Life: Opposing Force) -> Sinal 1
+    (POSTAL Redux, SIMULACRA) -> Sinal 1
+    (Half-Life: Opposing Force, SIMULACRA) -> Sinal -1
+
+Triângulo #13 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Tomb Raider: Anniversary
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Tomb Raider: Anniversary) -> Sinal 1
+    (Ricochet, Tomb Raider: Anniversary) -> Sinal -1
+
+Triângulo #14 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Tomb Raider: Underworld
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Tomb Raider: Underworld) -> Sinal 1
+    (Ricochet, Tomb Raider: Underworld) -> Sinal -1
+
+Triângulo #15 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Alan Wake's American Nightmare
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Alan Wake's American Nightmare) -> Sinal 1
+    (Ricochet, Alan Wake's American Nightmare) -> Sinal -1
+
+Triângulo #16 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Amnesia: A Machine for Pigs
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Amnesia: A Machine for Pigs) -> Sinal 1
+    (Ricochet, Amnesia: A Machine for Pigs) -> Sinal -1
+
+Triângulo #17 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Knights and Merchants
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Knights and Merchants) -> Sinal 1
+    (Ricochet, Knights and Merchants) -> Sinal -1
+
+Triângulo #18 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Robotex
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Robotex) -> Sinal -1
+    (Ricochet, Robotex) -> Sinal 1
+
+Triângulo #19 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Epsilon corp.
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Epsilon corp.) -> Sinal 1
+    (Ricochet, Epsilon corp.) -> Sinal -1
+
+Triângulo #20 [TIPO: ++-]
+  Jogo U (Ponte): POSTAL Redux
+  Jogo V:         Ricochet
+  Jogo W:         Razortron 2000
+  Lógica da Tensão:
+    (POSTAL Redux, Ricochet) -> Sinal 1
+    (POSTAL Redux, Razortron 2000) -> Sinal 1
+    (Ricochet, Razortron 2000) -> Sinal -1
+
+... e mais 1797 outros triângulos frustrados.
+
+--- ✅ Análise Concluída ---
+Encontrados 1817 triângulos frustrados ('++-') envolvendo POSTAL Redux.
