@@ -7,6 +7,7 @@ ENV/
 # Arquivos .gexf (grafos grandes)
 *.gexf
 *.csv
+*.txt
 
 # Resultados das análises
 resultados_*/
